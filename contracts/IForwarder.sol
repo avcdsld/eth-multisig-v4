@@ -19,7 +19,7 @@ interface IForwarder is IERC165 {
   function setAutoFlush1155(bool autoFlush) external;
 
   /**
-   * Execute a token transfer of the full balance from the forwarder token to the parent address
+   * Execute a token transfer of the full balance from the forwarder to the parent address
    *
    * @param tokenContractAddress the address of the erc20 token contract
    */
