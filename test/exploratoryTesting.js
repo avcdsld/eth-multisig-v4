@@ -422,8 +422,32 @@ coins.forEach(
               msgSenderAddress: accounts[0],
               otherSignerAddress: accounts[1],
               wallet,
-              recipients: [accounts[5], accounts[6], accounts[7], accounts[8], accounts[9]],
-              values: [6, 2, 1, 3, 5],
+              recipients,
+              recipients: [
+                accounts[5], accounts[6], accounts[7], accounts[8], accounts[9], accounts[10], accounts[11], accounts[12], accounts[13], accounts[14],
+                accounts[15], accounts[16], accounts[17], accounts[18], accounts[19], accounts[20], accounts[21], accounts[22], accounts[23], accounts[24],
+                accounts[25], accounts[26], accounts[27], accounts[28], accounts[29], accounts[30], accounts[31], accounts[32], accounts[33], accounts[34],
+                accounts[35], accounts[36], accounts[37], accounts[38], accounts[39], accounts[40], accounts[41], accounts[42], accounts[43], accounts[44],
+                accounts[45], accounts[46], accounts[47], accounts[48], accounts[49], accounts[50], accounts[51], accounts[52], accounts[53], accounts[54],
+                accounts[55], accounts[56], accounts[57], accounts[58], accounts[59], accounts[60], accounts[61], accounts[62], accounts[63], accounts[64],
+                accounts[65], accounts[66], accounts[67], accounts[68], accounts[69], accounts[70], accounts[71], accounts[72], accounts[73], accounts[74],
+                accounts[75], accounts[76], accounts[77], accounts[78], accounts[79], accounts[80], accounts[81], accounts[82], accounts[83], accounts[84],
+                accounts[85], accounts[86], accounts[87], accounts[88], accounts[89], accounts[90], accounts[91], accounts[92], accounts[93], accounts[94],
+                accounts[95], accounts[96], accounts[97], accounts[98], accounts[99], accounts[100], accounts[101], accounts[102], accounts[103], accounts[104],
+
+              ],
+              values: [
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+              ],
               expireTime: calculateFutureExpireTime(1200),
               sequenceId,
             };
@@ -433,9 +457,31 @@ coins.forEach(
         });
 
         it('Check batch Gas', async () => {
-          for (let i = 0; i < 10; i++) {
-            const recipients = [accounts[5], accounts[6], accounts[7], accounts[8], accounts[9]];
-            const values = [6, 2, 1, 3, 5];
+          for (let i = 0; i < 100; i++) {
+            const recipients = [
+              accounts[5], accounts[6], accounts[7], accounts[8], accounts[9], accounts[10], accounts[11], accounts[12], accounts[13], accounts[14],
+              accounts[15], accounts[16], accounts[17], accounts[18], accounts[19], accounts[20], accounts[21], accounts[22], accounts[23], accounts[24],
+              accounts[25], accounts[26], accounts[27], accounts[28], accounts[29], accounts[30], accounts[31], accounts[32], accounts[33], accounts[34],
+              accounts[35], accounts[36], accounts[37], accounts[38], accounts[39], accounts[40], accounts[41], accounts[42], accounts[43], accounts[44],
+              accounts[45], accounts[46], accounts[47], accounts[48], accounts[49], accounts[50], accounts[51], accounts[52], accounts[53], accounts[54],
+              accounts[55], accounts[56], accounts[57], accounts[58], accounts[59], accounts[60], accounts[61], accounts[62], accounts[63], accounts[64],
+              accounts[65], accounts[66], accounts[67], accounts[68], accounts[69], accounts[70], accounts[71], accounts[72], accounts[73], accounts[74],
+              accounts[75], accounts[76], accounts[77], accounts[78], accounts[79], accounts[80], accounts[81], accounts[82], accounts[83], accounts[84],
+              accounts[85], accounts[86], accounts[87], accounts[88], accounts[89], accounts[90], accounts[91], accounts[92], accounts[93], accounts[94],
+              accounts[95], accounts[96], accounts[97], accounts[98], accounts[99], accounts[100], accounts[101], accounts[102], accounts[103], accounts[104],
+            ];
+            const values = [
+              6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+                6, 2, 1, 3, 5, 6, 2, 1, 3, 5,
+            ];
             const totalValue = values.reduce((sum, elm) => sum + elm, 0);
 
             const iface = new ethers.utils.Interface([
